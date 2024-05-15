@@ -937,7 +937,7 @@
                                     </div>
                                     
                                     <!-- Contact Form -->
-                                    <form class="form contact-form" id="contact_form">
+                                    <form class="form contact-form kf-form" id="contact_form" method="post" action="https://kwesforms.com/api/foreign/forms/Io6IxNbXG1te2oyNRQxM">
                                         
                                         <div class="row">
                                             <div class="col-md-6">
@@ -946,7 +946,7 @@
                                                 <div class="form-group">
                                                     <label for="name">Name</label>
                                                     <div class="input-grad-wrap round">
-                                                        <input type="text" name="name" id="name" class="input-md input-grad round form-control" placeholder="Enter your name" pattern=".{3,100}" required aria-required="true">
+                                                        <input type="text" name="name" id="name" class="input-md input-grad round form-control" placeholder="Enter your name" pattern=".{3,100}" required aria-required="true" autocomplete="on">
                                                     </div>
                                                 </div>
                                                 <!-- End Name -->
@@ -959,7 +959,7 @@
                                                 <div class="form-group">
                                                     <label for="email">Email</label>
                                                     <div class="input-grad-wrap round">
-                                                        <input type="email" name="email" id="email" class="input-md input-grad round form-control" placeholder="Enter your email" pattern=".{5,100}" required aria-required="true">
+                                                        <input type="email" name="email" id="email" class="input-md input-grad round form-control" placeholder="Enter your email" pattern=".{5,100}" required aria-required="true" autocomplete="on">
                                                     </div>
                                                 </div>
                                                 <!-- End Email -->
@@ -981,7 +981,7 @@
                                                 
                                                 <!-- Send Button -->
                                                 <div class="pt-3 text-md-end">
-                                                    <button class="submit_btn btn-mod btn-medium btn-grad btn-round" data-btn-animate="y" id="submit_btn" aria-controls="result">
+                                                    <button class="submit_btn btn-mod btn-medium btn-grad btn-round" data-btn-animate="y" id="submit_btn" aria-controls="result" type="submit">
                                                         Send Message
                                                     </button>
                                                 </div>
@@ -1128,6 +1128,7 @@
         <script src="js/contact-form.js"></script>        
         <script src="js/all.js"></script> 
         <script src="https://kit.fontawesome.com/06bd159a87.js" crossorigin="anonymous"></script>
+        <script src="https://kwesforms.com/v2/kf-script.js" defer></script>
         <!-- End JS -->       
         
     </body>
