@@ -6170,6 +6170,18 @@ img.services-image{
     border-color: rgba(255,255,255, .25);
 }
 
+/* Services Media Queru */
+
+@media only screen and (max-width: 992px) {
+    .services-7-arrow {
+        display: none;
+    }
+
+    #services div.col-lg-7.offset-xl-1 div.tab-content {
+        display: none;
+    }
+}
+
 
 /* ==============================
    Team
