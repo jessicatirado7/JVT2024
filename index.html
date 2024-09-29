@@ -298,26 +298,26 @@
                             <!-- Services Tabs -->
                             <div class="col-lg-5 col-xl-4 mb-md-50 mb-sm-30">
                                 <ul class="nav nav-tabs services-7-tabs" role="tablist">
-                                    <li>
-                                        <a href="#services-item-1a" class="active" aria-controls="services-item-1a" role="tab" aria-selected="true" data-bs-toggle="tab">
+                                    <li role="presentation">
+                                        <a href="#services-item-1a" class="active" role="tab" aria-controls="services-item-1a" aria-selected="true" data-bs-toggle="tab">
                                             <h4 class="services-7-title">Branding</h4>
                                             <div class="services-7-text">
-                                                Creating and communiting your unique identity, personality, value to your target audience.
+                                                Creating and communicating your unique identity, personality, value to your target audience.
                                             </div>
                                             <div class="services-7-arrow"><i class="fa-solid fa-arrow-right size-24"></i></div>
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="#services-item-2a" aria-controls="services-item-2a" role="tab" aria-selected="false" data-bs-toggle="tab">
+                                    <li role="presentation">
+                                        <a href="#services-item-2a" role="tab" aria-controls="services-item-2a" aria-selected="false" data-bs-toggle="tab">
                                             <h4 class="services-7-title">UI/UX Design</h4>
                                             <div class="services-7-text">
-                                                UI/UX Design services that create beautiful, funtional, user-friendly digital products. Such as wireframes or mockups of websites and mobile apps.
+                                                UI/UX Design services that create beautiful, functional, user-friendly digital products. Such as wireframes or mockups of websites and mobile apps.
                                             </div>
                                             <div class="services-7-arrow"><i class="fa-solid fa-arrow-right size-24"></i></div>
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="#services-item-3a" aria-controls="services-item-3a" role="tab" aria-selected="false" data-bs-toggle="tab">
+                                    <li role="presentation">
+                                        <a href="#services-item-3a" role="tab" aria-controls="services-item-3a" aria-selected="false" data-bs-toggle="tab">
                                             <h4 class="services-7-title">Web Development</h4>
                                             <div class="services-7-text">
                                                 Web Development services that create fast, secure, and responsive websites.
@@ -325,8 +325,8 @@
                                             <div class="services-7-arrow"><i class="fa-solid fa-arrow-right size-24"></i></div>
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="#services-item-4a" aria-controls="services-item-4a" role="tab" aria-selected="false" data-bs-toggle="tab">
+                                    <li role="presentation">
+                                        <a href="#services-item-4a" role="tab" aria-controls="services-item-4a" aria-selected="false" data-bs-toggle="tab">
                                             <h4 class="services-7-title">Graphic Design</h4>
                                             <div class="services-7-text">
                                                 Graphic Design services that create stunning, original, and effective visuals for your brand, such as logos, flyers, brochures, banners, and more.
@@ -334,7 +334,8 @@
                                             <div class="services-7-arrow"><i class="fa-solid fa-arrow-right size-24"></i></div>
                                         </a>
                                     </li>
-                                </ul> 
+                                </ul>
+                                 
                             </div>
                             <!-- End Services Tabs -->
                             
@@ -383,7 +384,7 @@
                                             </div>
                                             
                                             <div class="small text-gray text-center mt-3">
-                                                <p><a href="https://www.milestonementalhealth.com/" target="_blank">Click here to see the live website.</a></p>
+                                                <p><a href="https://www.milestonementalhealth.com/" rel="noopener" target="_blank">Click here to see the live website.</a></p>
                                                  
                                             </div>
                                             
@@ -783,7 +784,7 @@
                 <!-- End Steps Section -->
                 
                 <!-- Call to Action Section -->
-                <section class="page-section bg-scroll light-content" style="background-image: url(images/demo-gradient/section-bg-3.jpg)">
+                <section class="page-section bg-scroll light-content call-to-action-3">
                     
                     <!-- Desktop Overlay -->
                     <div class="bg-overlay bg-gradient-dark-alpha-2 d-none d-md-block"></div>
@@ -971,7 +972,7 @@
                                         <div class="form-group">
                                             <label for="message">Message</label>
                                             <div class="input-grad-wrap round">
-                                                <textarea name="message" id="message" class="input-md input-grad round form-control" style="height: 101px;" placeholder="Enter your message"></textarea>
+                                                <textarea name="message" id="message" class="input-md input-grad round form-control" placeholder="Enter your message"></textarea>
                                             </div>
                                         </div>
                                         
@@ -981,7 +982,13 @@
                                                 
                                                 <!-- Send Button -->
                                                 <div class="pt-3 text-md-end">
-                                                    <button class="submit_btn btn-mod btn-medium btn-grad btn-round" data-btn-animate="y" id="submit_btn" aria-controls="result" type="submit">
+                                                    <button class="submit_btn btn-mod btn-medium btn-grad btn-round g-recaptcha" data-btn-animate="y" 
+                                                    id="submit_btn" 
+                                                    aria-controls="result" 
+                                                    type="submit"
+                                                    data-sitekey="6LcltNwpAAAAAMfp1_I3TrGgEt4SW9pjHKkwsoS3"
+                                                    data-callback='onSubmit'
+                                                    data-action='submit'>
                                                         Send Message
                                                     </button>
                                                 </div>
@@ -1066,7 +1073,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="https://www.instagram.com/jvtdesigns/" target="_blank">
+                                            <a href="https://www.instagram.com/jvtdesigns/" rel="noopener" target="_blank">
                                                 <i class="fa-brands fa-instagram"></i>
                                                 Instagram
                                             </a>
@@ -1121,6 +1128,7 @@
         <!-- End Page Wrap -->      
         
         <!-- JS -->
+        <script src="https://www.google.com/recaptcha/enterprise.js?render=6LcltNwpAAAAAMfp1_I3TrGgEt4SW9pjHKkwsoS3"></script>
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.bundle.min.js"></script>
         <script src="js/plugins.js"></script>
@@ -1128,6 +1136,14 @@
         <script src="js/all.js"></script> 
         <script src="https://kit.fontawesome.com/06bd159a87.js" crossorigin="anonymous"></script>
         <script src="https://kwesforms.com/v2/kf-script.js" defer></script>
+
+        <!-- Replace the variables below. -->
+<script>
+    function onSubmit(token) {
+      document.getElementById("contact_form").submit();
+    }
+  </script>
+
         <!-- End JS -->       
         
     </body>
