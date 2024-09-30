@@ -3,36 +3,46 @@ tinify.key = 'QWRZf5mpRCR3qh0425xqMx12Y7JcXD9N'; // Replace with your actual API
 
 console.log(`Current working directory: ${process.cwd()}`);
 
-// Compress an image from a file
-tinify.fromFile('./images/demo-gradient/logo-dark.png').toFile('./images/demo-gradient/logo-dark-compressed.png');
+// Function to compress and convert an image to WebP
+const compressToWebP = (inputPath, outputPath) => {
+  tinify.fromFile(inputPath).toFile(outputPath)
+    .then(() => {
+      console.log(`Image ${inputPath} compressed and converted to WebP successfully!`);
+    })
+    .catch(err => {
+      console.error(`Error compressing and converting ${inputPath}:`, err);
+    });
+};
 
-tinify.fromFile('./images/demo-gradient/hs-image-1.jpg').toFile('./images/demo-gradient/hs-image-1-compressed.jpg')
-.then(() => {
-    console.log('Image compressed successfully!');
-  })
-  .catch(err => {
-    console.error('Error compressing image:', err);
-  });
-  console.log('Compression function called.');
+// List of images to be compressed and converted
+const images = [
+  'logo-dark.png',
+  'hs-image-1.jpg',
+  'decoration-2.png',
+  'section-image-1.jpg',
+  'section-image-2.jpg',
+  'section-image-3.jpg',
+  'section-image-4.jpg',
+  'services/service-1.png',
+  'services/service-2.png',
+  'services/service-3.png',
+  'services/service-4.png',
+  'section-image-6.jpg',
+  'section-image-7.jpg',
+  'section-image-5.png',
+  'portfolio/project-6.jpg',
+  'portfolio/project-1.jpg',
+  'portfolio/project-4.jpg',
+  'portfolio/project-2.jpg',
+  'portfolio/project-3.jpg',
+  'portfolio/project-5.jpg'
+];
 
-tinify.fromFile('./images/demo-gradient/decoration-2.png').toFile('./images/demo-gradient/decoration-2-compressed.png');
-tinify.fromFile('./images/demo-gradient/section-image-1.jpg').toFile('./images/demo-gradient/section-image-1-compressed.jpg');
-tinify.fromFile('./images/demo-gradient/section-image-2.jpg').toFile('./images/demo-gradient/section-image-2-compressed.jpg');
-tinify.fromFile('./images/demo-gradient/section-image-3.jpg').toFile('./images/demo-gradient/section-image-3-compressed.jpg');
-tinify.fromFile('./images/demo-gradient/section-image-4.jpg').toFile('./images/demo-gradient/section-image-4-compressed.jpg');
-tinify.fromFile('./images/demo-gradient/services/service-1.png').toFile('./images/demo-gradient/services/service-1-compressed.png');
-tinify.fromFile('./images/demo-gradient/services/service-2.png').toFile('./images/demo-gradient/services/service-2-compressed.png');
-tinify.fromFile('./images/demo-gradient/services/service-3.png').toFile('./images/demo-gradient/services/service-3-compressed.png');
-tinify.fromFile('./images/demo-gradient/services/service-4.png').toFile('./images/demo-gradient/services/service-4-compressed.png');
-tinify.fromFile('./images/demo-gradient/section-image-6.jpg').toFile('./images/demo-gradient/section-image-6-compressed.jpg');
-tinify.fromFile('./images/demo-gradient/section-image-7.jpg').toFile('./images/demo-gradient/section-image-7-compressed.jpg');
-tinify.fromFile('./images/demo-gradient/section-image-5.png').toFile('./images/demo-gradient/section-image-5-compressed.png');
-tinify.fromFile('./images/demo-gradient/portfolio/project-6.jpg').toFile('./images/demo-gradient/portfolio/project-6-compressed.jpg');
-tinify.fromFile('./images/demo-gradient/portfolio/project-1.jpg').toFile('./images/demo-gradient/portfolio/project-1-compressed.jpg');
-tinify.fromFile('./images/demo-gradient/portfolio/project-4.jpg').toFile('./images/demo-gradient/portfolio/project-4-compressed.jpg');
-tinify.fromFile('./images/demo-gradient/portfolio/project-2.jpg').toFile('./images/demo-gradient/portfolio/project-2-compressed.jpg');
-tinify.fromFile('./images/demo-gradient/portfolio/project-3.jpg').toFile('./images/demo-gradient/portfolio/project-3-compressed.jpg');
-tinify.fromFile('./images/demo-gradient/portfolio/project-5.jpg').toFile('./images/demo-gradient/portfolio/project-5-compressed.jpg');
+// Compress and convert each image to WebP
+images.forEach(image => {
+  const inputPath = `./images/demo-gradient/${image}`;
+  const outputPath = `./images/demo-gradient/${image.split('.').slice(0, -1).join('.')}-compressed.webp`;
+  compressToWebP(inputPath, outputPath);
+});
 
-
-
+console.log('Compression and conversion function called.');
