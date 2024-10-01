@@ -11,18 +11,39 @@
         <!-- Favicon -->
         <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">        
+        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+        
+        <!--Images-->
+        <link rel="preload" href="images/demo-gradient/hs-image-1-compressed.webp" as="image">
 
         <!-- CSS -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/style-responsive.css">
-        <link rel="stylesheet" href="css/vertical-rhythm.min.css">
-        <link rel="stylesheet" href="css/magnific-popup.css">
-        <link rel="stylesheet" href="css/owl.carousel.css">
-        <link rel="stylesheet" href="css/splitting.css">
-        <link rel="stylesheet" href="css/YTPlayer.css">
-        <link rel="stylesheet" href="css/demo-gradient/demo-gradient.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css" media="print" onload="this.media='all'">
+        <noscript><link rel="stylesheet" href="css/bootstrap.min.css"></noscript>
+
+        <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
+        <noscript><link rel="stylesheet" href="css/style.css"></noscript>
+
+        <link rel="stylesheet" href="css/style-responsive.css" media="print" onload="this.media='all'">
+        <noscript><link rel="stylesheet" href="css/style-responsive.css"></noscript>
+
+        <link rel="stylesheet" href="css/vertical-rhythm.min.css" media="print" onload="this.media='all'">
+        <noscript><link rel="stylesheet" href="css/vertical-rhythm.min.css"></noscript>
+
+        <link rel="stylesheet" href="css/magnific-popup.css" media="print" onload="this.media='all'">
+        <noscript><link rel="stylesheet" href="css/magnific-popup.css"></noscript>
+
+        <link rel="stylesheet" href="css/owl.carousel.css" media="print" onload="this.media='all'">
+        <noscript><link rel="stylesheet" href="css/owl.carousel.css"></noscript>
+
+        <link rel="stylesheet" href="css/splitting.css" media="print" onload="this.media='all'">
+        <noscript><link rel="stylesheet" href="css/splitting.css"></noscript>
+
+        <link rel="stylesheet" href="css/YTPlayer.css" media="print" onload="this.media='all'">
+        <noscript><link rel="stylesheet" href="css/YTPlayer.css"></noscript>
+
+        <link rel="stylesheet" href="css/demo-gradient/demo-gradient.css" media="print" onload="this.media='all'">
+        <noscript><link rel="stylesheet" href="css/demo-gradient/demo-gradient.css"></noscript>
+
         
         <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1130,21 +1151,41 @@
         <!-- JS -->
         
         <script src="https://www.google.com/recaptcha/enterprise.js?render=6LcltNwpAAAAAMfp1_I3TrGgEt4SW9pjHKkwsoS3" async></script>
-        <script src="src/jquery.min.js" defer></script>
-        <script src="src/bootstrap.bundle.min.js" defer></script>
-        <script src="src/plugins.js" defer></script>
-        <script src="src/jquery.ajaxchimp.min.js" defer></script>                    
+        <script src="src/jquery.min.js"></script>
+        <script src="src/bootstrap.bundle.min.js"></script>
+        <script src="src/plugins.js" defer></script>                  
         <script src="src/all.js" defer></script> 
         <script src="https://kit.fontawesome.com/06bd159a87.js" crossorigin="anonymous" async></script>
         <script src="https://kwesforms.com/v2/kf-script.js" async></script>
         <script src="dist/bundle.js" defer></script>
 
         <!-- Replace the variables below. -->
-<script>
-    function onSubmit(token) {
-      document.getElementById("contact_form").submit();
-    }
+         <!-- Lazy loading third-party scripts -->
+  <script>
+    window.addEventListener('load', function() {
+      var recaptchaScript = document.createElement('script');
+      recaptchaScript.src = 'https://www.google.com/recaptcha/enterprise.js?render=6LcltNwpAAAAAMfp1_I3TrGgEt4SW9pjHKkwsoS3';
+      recaptchaScript.async = true;
+      document.body.appendChild(recaptchaScript);
+
+      var fontAwesomeScript = document.createElement('script');
+      fontAwesomeScript.src = 'https://kit.fontawesome.com/06bd159a87.js';
+      fontAwesomeScript.crossOrigin = 'anonymous';
+      fontAwesomeScript.async = true;
+      document.body.appendChild(fontAwesomeScript);
+
+      var kwesformsScript = document.createElement('script');
+      kwesformsScript.src = 'https://kwesforms.com/v2/kf-script.js';
+      kwesformsScript.async = true;
+      document.body.appendChild(kwesformsScript);
+    });
   </script>
+  
+        <script>
+            function onSubmit(token) {
+            document.getElementById("contact_form").submit();
+            }
+        </script>
 
         <!-- End JS -->       
         
