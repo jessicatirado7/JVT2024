@@ -1,4 +1,7 @@
 const path = require('path');
+const glob = require('glob');
+const { PurgeCSSPlugin } = require('purgecss-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   mode: 'production',
@@ -20,8 +23,22 @@ module.exports = {
     ],
   },
   optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin({
+      terserOptions: {
+        compress: {
+          unused: true,
+          dead_code: true,
+        },
+      },
+    })],
     splitChunks: {
       chunks: 'all',
     },
   },
+  plugins: [
+    new PurgeCSSPlugin({
+      paths: glob.sync(`${path.join(__dirname, 'src')}/**/*`, { nodir: true }),
+    }),
+  ],
 };
