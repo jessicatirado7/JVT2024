@@ -22,7 +22,8 @@
   left: 0;
   visibility: hidden;
   transition: inherit;
-  user-select: none;
+  -webkit-user-select: none;
+  user-select: none; 
 }
 
 /* Expanded CSS Variables */

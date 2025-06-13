@@ -432,85 +432,54 @@
      Lightboxes
      --------------------------------------------- */
     
-    function init_lightbox(){
-    
-        // Works Item Lightbox				
-        $(".work-lightbox-link").magnificPopup({
-            gallery: {
-                enabled: true
-            },
-            mainClass: "mfp-fade"
+    function init_lightbox() {
+    console.log("Initializing Lightbox...");
+
+    // Only run if .work-lightbox-link exists
+    if ($(".work-lightbox-link").length) {
+        console.log("Initializing .work-lightbox-link lightbox");
+
+        $(".work-lightbox-link").each(function () {
+            const $link = $(this);
+            const href = $link.attr("href");
+            const type = href ? href.split('.').pop().toLowerCase() : '';
+
+            // Force MagnificPopup to recognize image type correctly
+            $link.magnificPopup({
+                type: 'image',
+                mainClass: 'mfp-fade',
+                image: {
+                    titleSrc: function(item) {
+                        return item.el.find('img').attr('alt') || '';
+                    },
+                    verticalFit: true,
+                    tError: '<a href="%url%">The image</a> could not be loaded.'
+                },
+                gallery: {
+                    enabled: true,
+                    navigateByImgClick: true,
+                    preload: [0, 2] // Load nearby images for smoother browsing
+                },
+                callbacks: {
+                    beforeOpen: function () {
+                        console.log("Opening image:", href);
+                    },
+                    open: function () {
+                        console.log("Lightbox opened successfully.");
+                    },
+                    error: function (type, data) {
+                        console.error("MagnificPopup Error:", type, data);
+                    }
+                }
+            });
         });
-        	
-        // Other Custom Lightbox
-        $(".lightbox-gallery-1").magnificPopup({
-            gallery: {
-                enabled: true
-            },
-            mainClass: "mfp-fade"
-        });
-        $(".lightbox-gallery-2").magnificPopup({
-            gallery: {
-                enabled: true
-            },
-            mainClass: "mfp-fade"
-        });
-        $(".lightbox-gallery-3").magnificPopup({
-            gallery: {
-                enabled: true
-            },
-            mainClass: "mfp-fade"
-        });
-        $(".lightbox-gallery-4").magnificPopup({
-            gallery: {
-                enabled: true
-            },
-            mainClass: "mfp-fade"
-        });
-        $(".lightbox-gallery-5").magnificPopup({
-            gallery: {
-                enabled: true
-            },
-            mainClass: "mfp-fade"
-        });
-        $(".lightbox-gallery-6").magnificPopup({
-            gallery: {
-                enabled: true
-            },
-            mainClass: "mfp-fade"
-        });
-        $(".lightbox-gallery-7").magnificPopup({
-            gallery: {
-                enabled: true
-            },
-            mainClass: "mfp-fade"
-        });
-        $(".lightbox-gallery-8").magnificPopup({
-            gallery: {
-                enabled: true
-            },
-            mainClass: "mfp-fade"
-        });
-        $(".lightbox-gallery-9").magnificPopup({
-            gallery: {
-                enabled: true
-            },
-            mainClass: "mfp-fade"
-        });
-        $(".lightbox-gallery-10").magnificPopup({
-            gallery: {
-                enabled: true
-            },
-            mainClass: "mfp-fade"
-        });
-        $(".lightbox").magnificPopup({
-            gallery: {
-                enabled: true
-            },
-            mainClass: "mfp-fade"
-        });
-        
+
+    } else {
+        console.warn("No .work-lightbox-link elements found.");
     }
+
+    console.log("Lightbox initialization complete.");
+}
     
     
     /* -------------------------------------------
@@ -884,11 +853,6 @@
         // Responsive video
         $(".video, .resp-media, .blog-media").fitVids();
         $(".work-full-media").fitVids(); 
-        
-        // Background Youtube Video
-        $(document).ready(function(){
-            $(".player").mb_YTPlayer();
-        });
                
     }    
     
